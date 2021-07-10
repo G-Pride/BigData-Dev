@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/BigData-Dev.iml" filepath="$PROJECT_DIR$/.idea/BigData-Dev.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bigdata_flink/bigdata_flink.iml" filepath="$PROJECT_DIR$/bigdata_flink/bigdata_flink.iml" />
+    </modules>
+  </component>
+</project>
