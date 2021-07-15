@@ -6,6 +6,7 @@ import org.apache.flink.api.java.io.CsvReader;
 import org.apache.flink.api.java.tuple.Tuple1;
 import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.api.java.tuple.Tuple3;
+import org.apache.flink.configuration.Configuration;
 
 /**
  * Demo class
@@ -31,7 +32,7 @@ public class DataSetSourceCsvFile {
         DataSet<Tuple2<String,Integer>> csvInput = env.readCsvFile(input)
                 .ignoreFirstLine()
                 .types(String.class,Integer.class);
-        csvInput.print();
+        //csvInput.print();
         System.out.println("-----------------");
 
         // read a CSV file with two fields, taking only one of them
@@ -39,7 +40,7 @@ public class DataSetSourceCsvFile {
                 .ignoreFirstLine()
                 .includeFields("10")  // take the first field
                 .types(String.class);
-        csvInput2.print();
+        //csvInput2.print();
         System.out.println("-----------------");
 
         // read a CSV file with three fields into a POJO (People.class) with corresponding fields
@@ -48,7 +49,19 @@ public class DataSetSourceCsvFile {
                 .ignoreFirstLine()//表示是否忽略第一行
                 .includeFields(true,true)//表示需要展示的列
                 .pojoType(People.class,"name","age");
-        csvInput3.print();
+        //csvInput3.print();
+
+        /**
+         * 读取整个目录下的文件
+         */
+        // create a configuration object
+        Configuration parameters = new Configuration();
+        // set the recursive enumeration parameter
+        parameters.setBoolean("recursive.file.enumeration", true);
+        // pass the configuration to the data source
+        DataSet<String> logs = env.readTextFile("file:///F:/flink/")
+                .withParameters(parameters);
+        //logs.print();
     }
 
 
