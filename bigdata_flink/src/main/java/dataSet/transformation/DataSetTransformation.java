@@ -73,6 +73,7 @@ class DataSetSourceTextFile {
         //左外连接
         System.out.println("左外连接：");
         data1.leftOuterJoin(data2).where(0).equalTo(0).with(new JoinFunction<Tuple2<Integer,String>, Tuple2<Integer,String>, Tuple3<Integer,String, String>>() {
+            @Override
             public Tuple3<Integer, String, String> join(Tuple2<Integer, String> first, Tuple2<Integer, String> second) throws Exception {
                 if(second == null) {
                     return new Tuple3<Integer, String, String>(first.f0, first.f1, "-");
@@ -92,6 +93,7 @@ class DataSetSourceTextFile {
         //右外连接
         System.out.println("右外连接：");
         data1.rightOuterJoin(data2).where(0).equalTo(0).with(new JoinFunction<Tuple2<Integer,String>, Tuple2<Integer,String>, Tuple3<Integer,String, String>>() {
+            @Override
             public Tuple3<Integer, String, String> join(Tuple2<Integer, String> first, Tuple2<Integer, String> second) throws Exception {
                 if(first == null) {
                     return new Tuple3<Integer, String, String>(second.f0, "-", second.f1);
