@@ -30,7 +30,7 @@ public class JavaBroadcastApp {
         info1.add(new Tuple2("C罗",2));
         info1.add(new Tuple2("dybala",10));
         info1.add(new Tuple2("inesta",8));
-        DataSource<Tuple2<String, Integer>> toBroadcast = env.fromCollection(info1);
+        DataSet<Tuple2<String, Integer>> toBroadcast = env.fromCollection(info1);
 
         DataSet<String> data = env.fromElements("messi","J罗", "dybala","inesta");
 
