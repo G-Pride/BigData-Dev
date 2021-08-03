@@ -1,5 +1,7 @@
-package dataStream.source;
+package dataStream.sink;
 
+import dataStream.sink.SinkToMySQL;
+import dataStream.sink.Student;
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;

@@ -1,4 +1,4 @@
-package dataStream.source;
+package dataStream.sink;
 
 /**
  * Author: Michael PK

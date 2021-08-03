@@ -1,5 +1,6 @@
-package dataStream.source;
+package dataStream.sink;
 
+import dataStream.sink.Student;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
 
